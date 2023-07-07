@@ -1,0 +1,46 @@
+<div class="col-md-12 p-5">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Sales</th>
+            <th scope="col">Net Sales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of s">
+            <th scope="row">{{prod.pid}}</th>
+            <td>{{prod.pname}}</td>
+            <td>{{prod.cat}}</td>
+            <td>{{prod.qty}}</td>
+            <td>{{prod.price}}</td>
+            <td>{{prod.units}}</td>
+            <td>{{prod.price * prod.units}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th>Total</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th>{{total}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    

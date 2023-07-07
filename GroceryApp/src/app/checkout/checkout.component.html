@@ -1,0 +1,196 @@
+<section class="h-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                        <div class="col-lg-12">
+                            <div class="card-body p-md-5 mx-md-4">
+
+                                <div class="text-center">
+                                    <img src="assets/images/cart.jpg" style="width: 185px;" alt="logo">
+                                    <h4 class="mt-1 mb-5 pb-1">Checkout</h4>
+                                </div>
+
+                                <form #log="ngForm">
+                                    <h5>Billing Address</h5>
+                                    <br>
+                                    <div class="row">
+
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="firstName">First Name</label>
+                                            <input type="text" id="firstName" class="form-control form-control-lg"
+                                                required minlength="3" name="firstName" #firstName="ngModel" [(ngModel)]="fname" />
+
+
+                                            <div id="invalid1" *ngIf="firstName.touched">
+                                                <p style="display: inline" *ngIf="firstName.errors?.['required']">First
+                                                    Name
+                                                    is required</p>
+                                                <p style="display: inline" *ngIf="firstName.errors?.['minlength']">
+                                                    Minumum 3
+                                                    characters are required</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="lastName">Last Name</label>
+                                            <input type="text" id="lastName" class="form-control form-control-lg"
+                                                name="lastName" required minlength="3" #lastName="ngModel" [(ngModel)]="lname" />
+
+
+
+                                            <div id="invalid1" *ngIf="lastName.touched">
+                                                <p style="display: inline" *ngIf="lastName.errors?.['required']">Last
+                                                    Name
+                                                    is required</p>
+                                                <p style="display: inline" *ngIf="lastName.errors?.['minlength']">
+                                                    Minumum 3
+                                                    characters are required</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="email">Email</label>
+                                            <input type="email" id="email" class="form-control form-control-lg"
+                                                pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required name="email" 
+                                                #email="ngModel" [(ngModel)] = "eml" />
+
+
+                                            <div id="invalidemail" *ngIf="email.touched">
+                                                <p style="display: inline" *ngIf="email.errors?.['required']">Email is
+                                                    required</p>
+                                                <p style="display: inline" *ngIf="email.errors?.['pattern']">Enter a
+                                                    vaild
+                                                    email address</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="phoneNumber">Phone Number</label>
+                                            <input type="tel" id="phoneNumber" class="form-control form-control-lg"
+                                                 required name="phoneNumber"
+                                                #phoneNumber="ngModel" ngModel [(ngModel)]="pno"/>
+
+
+                                            <div id="invalid1" *ngIf="phoneNumber.touched">
+                                                <p style="display: inline" *ngIf="phoneNumber.errors?.['required']">
+                                                    Phone
+                                                    number is required</p>
+                                                <p style="display: inline" *ngIf="phoneNumber.errors?.['pattern']">Enter
+                                                    a
+                                                    vaild phone number</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-outline mb-4 col-lg-12">
+                                            <label class="form-label" for="epassword">Address</label>
+                                            <input type="text" id="epassword" class="form-control form-control-lg"
+                                                required
+                                                name="epassword" #epassword="ngModel" ngModel />
+
+
+                                            <div id="invalid1" *ngIf="epassword.touched">
+                                                <p style="display: inline" *ngIf="epassword.errors?.['required']">
+                                                    Enter address</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-outline mb-4 col-lg-12">
+                                            <label class="form-label" for="cpassword">Address 2(Optional)</label>
+                                            <input type="text" id="cpassword" class="form-control form-control-lg"
+                                                name="cpassword" #cpassword="ngModel" ngModel />
+                                        </div>
+                                    </div>
+                                    <h5>Payment Details</h5>
+                                    <br>
+                                    <div class="row">
+
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="cName">Name on card</label>
+                                            <input type="text" id="cName" class="form-control form-control-lg"
+                                                required minlength="3" name="cName" #cName="ngModel" [(ngModel)]="test" />
+
+
+                                            <div id="invalid1" *ngIf="cName.touched">
+                                                <p style="display: inline" *ngIf="cName.errors?.['required']">
+                                                    Name
+                                                    is required</p>
+                                                <p style="display: inline" *ngIf="cName.errors?.['minlength']">
+                                                    Minumum 3
+                                                    characters are required</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="cno">Card Number</label>
+                                            <input type="text" id="cno" class="form-control form-control-lg"
+                                                name="cno" required minlength="16" maxlength="16"  #cno="ngModel" ngModel />
+                                            
+
+
+                                            <div id="invalid1" *ngIf="cno.touched">
+                                                <p style="display: inline" *ngIf="cno.errors?.['required']">Card Number Required</p>
+                                                <p style="display: inline" *ngIf="cno.errors?.['minlength']">
+                                                    16 digits required<br></p>
+                                                
+                                                <p style="display: inline" *ngIf="cvv.errors?.['pattern']">Enter numbers only </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="form-outline mb-4 col-lg-3">
+                                            <label class="form-label" for="exp">Expiration date</label>
+                                            <input type="month" id="exp" class="form-control form-control-lg"
+                                                required min="2023-07" name="exp" #exp="ngModel" ngModel />
+
+
+                                            <div id="invalid1" *ngIf="exp.touched">
+                                                <p style="display: inline" *ngIf="exp.errors?.['required']">Expiration date required</p>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="form-outline mb-4 col-lg-2">
+                                            <label class="form-label" for="cvv">CVV</label>
+                                            <input type="text" id="cvv" class="form-control form-control-lg"
+                                                name="cvv" required minlength="3" maxlength="3" pattern="^[0-9]*$" #cvv="ngModel" ngModel />
+
+
+
+                                            <div id="invalid1" *ngIf="cvv.touched">
+                                                <p style="display: inline" *ngIf="cvv.errors?.['required']">CVV required</p>
+                                                <p style="display: inline" *ngIf="cvv.errors?.['minlength']">
+                                                    3 digits required <br></p>
+                                                <p style="display: inline" *ngIf="cvv.errors?.['pattern']">Enter numbers only </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                                            type="submit" [disabled]="log.invalid" (click)="checkout()">Checkout</button><br>
+                                        <!--  <a class="text-muted" href="#!">Forgot password?</a> -->
+                                        <div id="result"></div>
+                                        <div id="invalidcpass"></div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

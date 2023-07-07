@@ -1,0 +1,36 @@
+<div class="col-md-12 p-5">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Individual price</th>
+            <th scope="col">Sum</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of allproducts">
+            <td>{{prod.pname}}</td>
+            <td>{{prod.cart_qty}}</td>
+            <td>{{prod.price}}</td>
+            <td>{{prod.price * prod.cart_qty}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <th></th>
+            <th>Total</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th>{{total}}</th>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
+<div class="row">
+  <div class = "mr-auto ml-auto text-center"><a class="btn btn-outline-success mt-auto" (click)="checkout()">Checkout</a></div></div>
+    

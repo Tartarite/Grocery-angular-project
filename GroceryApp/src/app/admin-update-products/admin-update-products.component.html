@@ -1,0 +1,135 @@
+<section class="h-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                        <div class="col-lg-12">
+                            <div class="card-body p-md-5 mx-md-4">
+
+                                <div class="text-center">
+                                    <h4 class="mt-1 mb-5 pb-1">Update a product</h4>
+                                </div>
+
+                                <form #prod="ngForm" (ngSubmit)="getProduct(prod)">
+                                    <div class="row">
+
+                                        <div class="form-outline mb-4 col-lg-12">
+                                            <label class="form-label" for="pid">ID</label>
+                                            <input type="text" id="pid" class="form-control form-control-lg" required
+                                                name="pid" #pid="ngModel" ngModel />
+                                        </div>
+                                    </div>
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                                            type="submit" [disabled]="prod.invalid">Get product details</button><br>
+                                        <div id="result" *ngIf="visible">
+                                            <div class="col-md-12 p-5">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">ID</th>
+                                                            <th scope="col">Name</th>
+                                                            <th scope="col">Category</th>
+                                                            <th scope="col">Quantity</th>
+                                                            <th scope="col">Img</th>
+                                                            <th scope="col">Price</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">{{obj.pid}}</th>
+                                                            <td>{{obj.pname}}</td>
+                                                            <td>{{obj.cat}}</td>
+                                                            <td>{{obj.qty}}</td>
+                                                            <td>{{obj.img}}</td>
+                                                            <td>{{obj.price}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div id="invalidcpass"></div>
+                                    </div>
+                                </form>
+                                <form #log="ngForm" (ngSubmit)="updateProduct(log)">
+                                    <div class="text-center">
+                                        <h4 class="mt-1 mb-5 pb-1">Enter details to be updated</h4>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="pname">Name</label>
+                                            <input type="text" id="pname" class="form-control form-control-lg"
+                                                name="pname" #pname="ngModel" ngModel />
+                                        </div>
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="price">Price</label>
+                                            <input type="test" id="price" class="form-control form-control-lg" name="price"
+                                                #price="ngModel" ngModel />
+
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="qty">Quantity</label>
+                                            <input type="text" id="qty" class="form-control form-control-lg" name="qty"
+                                                #qty="ngModel" ngModel />
+
+
+
+
+                                        </div>
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="image">Image link</label>
+                                            <input type="file" id="image" accept="image/*"
+                                                class="form-control form-control-lg" name="image"
+                                                #image="ngModel" ngModel />
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="cat">Category</label>
+                                            <input type="test" id="cat" class="form-control form-control-lg" name="cat"
+                                                #cat="ngModel" ngModel />
+
+
+
+
+                                        </div>
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="dscp">Description</label>
+                                            <input type="text" id="dscp" class="form-control form-control-lg"
+                                                name="dscp" #dscp="ngModel" ngModel />
+
+
+
+
+                                        </div>
+                                        
+
+                                    </div>
+
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                                            type="submit" [disabled]="log.invalid">Insert</button><br>
+                                        <!--  <a class="text-muted" href="#!">Forgot password?</a> -->
+                                        <div id="result2"></div>
+                                        <div id="invalidcpass"></div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

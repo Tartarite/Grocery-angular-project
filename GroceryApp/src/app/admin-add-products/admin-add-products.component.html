@@ -1,0 +1,119 @@
+<section class="h-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                        <div class="col-lg-12">
+                            <div class="card-body p-md-5 mx-md-4">
+
+                                <div class="text-center">
+                                    <h4 class="mt-1 mb-5 pb-1">Add a new product</h4>
+                                </div>
+
+                                <form #log="ngForm" (ngSubmit)="addProduct(log)">
+                                    <div class="row">
+
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="pid">Product ID</label>
+                                            <input type="text" id="pid" class="form-control form-control-lg" required
+                                                name="pid" #pid="ngModel" ngModel />
+                                        </div>
+
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="pname">Name</label>
+                                            <input type="text" id="pname" class="form-control form-control-lg"
+                                                name="pname" required minlength="3" #pname="ngModel" ngModel />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="cat">Category</label>
+                                            <input type="test" id="cat" class="form-control form-control-lg" required
+                                                name="cat" #cat="ngModel" ngModel />
+
+
+                                            <div id="invalidemail" *ngIf="cat.touched">
+                                                <p style="display: inline" *ngIf="cat.errors?.['required']">Required</p>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="qty">Quantity</label>
+                                            <input type="text" id="qty" class="form-control form-control-lg" required
+                                                name="qty" #qty="ngModel" ngModel />
+
+
+                                            <div id="invalid1" *ngIf="qty.touched">
+                                                <p style="display: inline" *ngIf="qty.errors?.['required']">
+                                                    Phone
+                                                    number is required</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="price">Price</label>
+                                            <input type="text" id="price" class="form-control form-control-lg" required
+                                                name="price" #price="ngModel" ngModel />
+
+
+                                            <div id="invalidprice" *ngIf="price.touched">
+                                                <p style="display: inline" *ngIf="price.errors?.['required']">Required
+                                                </p>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="form-outline mb-4 col-lg-6">
+                                            <label class="form-label" for="image">Image link</label>
+                                            <input type="file" id="image" accept="image/*"
+                                                class="form-control form-control-lg" required name="image"
+                                                #image="ngModel" ngModel />
+
+
+                                            <div id="invalid1" *ngIf="image.touched">
+                                                <p style="display: inline" *ngIf="image.errors?.['required']">
+                                                    Required</p>
+
+                                            </div>
+                                            <div id="invalidcpass"></div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-outline mb-4 col-lg-12">
+                                            <label class="form-label" for="dscp">Description</label>
+                                            <input type="text" id="dscp" class="form-control form-control-lg" required
+                                                name="dscp" #dscp="ngModel" ngModel />
+
+
+                                            <div id="invalid1" *ngIf="dscp.touched">
+                                                <p style="display: inline" *ngIf="dscp.errors?.['required']">Required
+                                                </p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                                            type="submit" [disabled]="log.invalid">Insert</button><br>
+                                        <div id="result"></div>
+                                        <div id="invalidcpass"></div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

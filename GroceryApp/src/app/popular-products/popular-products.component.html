@@ -1,0 +1,42 @@
+<form>
+    <div class="container px-4 px-lg-5 mt-4 ptest"id="searchBarDiv"*ngIf="testVis()">
+        <div class="form-outline" id="searchBar">
+            <input type="text"  class="form-control" placeholder="Search" aria-label="Search" (input)="testSearchVis($any($event).target.value)"    />
+        </div>
+    </div>
+</form>
+<div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <!-- <app-product [productObj]="p"></app-product> -->
+        <div class="col mb-5 btn btn-sm" *ngFor="let p of allproducts | filter:searchText   ">
+            <div class="card h-100" data-toggle="collapse" (click)="testExpand(p)">
+
+                <img class="card-img-top" src={{p.img}} alt="..." />
+
+                <div class="card-body p-4">
+                    <div class="text-center">
+
+                        <h5 class="fw-bolder">{{p.pname}}</h5>
+
+                        {{p.price | currency: 'INR'}}
+                    </div>
+                </div>
+                <h6><div [attr.id]="'expandCard' + p.pid"></div></h6>
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent test1">
+                    <div class="text-center" [attr.id]="'showAddCart' + p.pid"><a
+                            class="btn btn-outline-success mt-auto" (click)="changeVis(p)">Add To Cart</a></div>
+                    <div class="text-center test" [attr.id]="'hideAddCart' + p.pid"><a
+                            class="btn btn-outline-success mt-auto"><a class="btn"
+                                (click)="removeProduct(p)">-</a>&nbsp;&nbsp;&nbsp;&nbsp;{{p.cart_qty}}&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                class="btn" [attr.id]="'add' + p.pid" (click)="addProduct(p)">+</a></a></div>
+
+
+
+                </div>
+                
+            </div>
+        </div>
+        <div *ngFor="let p of allproducts"  (appTestdirective)="test(p)"></div>
+
+    </div>
+</div>
