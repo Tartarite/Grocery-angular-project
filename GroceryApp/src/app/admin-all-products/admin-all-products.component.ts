@@ -9,7 +9,7 @@ import { GroceryServiceService } from '../grocery-service.service';
 export class AdminAllProductsComponent {
   s:any
   constructor(private serv:GroceryServiceService){
-    serv.getAllProducts().subscribe(
+    serv.getAllProductsAsList().subscribe(
       (resp:any) =>{this.s=resp
 
         console.log(this.s)}

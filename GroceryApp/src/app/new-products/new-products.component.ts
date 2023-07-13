@@ -8,12 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-products.component.css']
 })
 export class NewProductsComponent {
-  allproducts:any
+  allproducts:any[]=[]
   searchText:string = ''
   constructor(private serv:GroceryServiceService,private router:Router){
     serv.getAllProductsByTime().subscribe(
-      (resp:any) =>{this.allproducts=resp
-        
+      (resp:any) =>{
+        for(let x of resp)
+        {
+          if(x.qty>0){
+            this.allproducts.push(x)
+          }
+        }
        }
       
     )

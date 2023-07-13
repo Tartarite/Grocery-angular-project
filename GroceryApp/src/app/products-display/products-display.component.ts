@@ -10,12 +10,17 @@ import { Route, Router } from '@angular/router';
 })
 
 export class ProductsDisplayComponent {
-  allproducts:any
+  allproducts:any[]=[]
   searchText:string = ''
   constructor(private serv:GroceryServiceService,private router:Router){
     serv.getAllProducts().subscribe(
-      (resp:any) =>{this.allproducts=resp
-        
+      (resp:any) =>{
+        for(let x of resp)
+        {
+          if(x.qty>0){
+            this.allproducts.push(x)
+          }
+        }
        }
       
     )

@@ -13,10 +13,17 @@ export class AdminDeleteProductsComponent {
   visible:boolean = false
   x:number
   getProduct(prod:any){ 
-    this.visible=true
+    
     this.serv.getProductByID(parseInt(prod.value.pid,10)).subscribe(
       (resp:any) => {
-        console.log("resp")
+        if(resp==null){
+          document.getElementById("invalidproduct")!.innerHTML="Product undefined";
+          return
+        }
+        else{
+          document.getElementById("invalidproduct")!.innerHTML="";
+          this.visible=true
+          console.log("resp")
         console.log(resp)
         this.obj.pid=resp.pid
         this.obj.dscp=resp.dscp
@@ -25,6 +32,8 @@ export class AdminDeleteProductsComponent {
         this.obj.cat=resp.cat
         this.obj.img=resp.img
         this.obj.price=resp.price
+        }
+        
       }
     )
     console.log("In get product")

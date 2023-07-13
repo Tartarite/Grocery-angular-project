@@ -42,14 +42,14 @@
                                                             <td>{{obj.pname}}</td>
                                                             <td>{{obj.cat}}</td>
                                                             <td>{{obj.qty}}</td>
-                                                            <td>{{obj.img}}</td>
+                                                            <td><img src={{obj.img}} alt=""></td>
                                                             <td>{{obj.price}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
-                                        <div id="invalidcpass"></div>
+                                        <div id="invalidproduct"></div>
                                     </div>
                                 
                                 
@@ -58,7 +58,7 @@
                                             type="submit" [disabled]="prod.invalid" (click)="deleteProduct(prod)">Delete</button><br>
                                         <!--  <a class="text-muted" href="#!">Forgot password?</a> -->
                                         <div id="result2"></div>
-                                        <div id="invalidcpass"></div>
+                                        
                                     </div>
                                 </form>
                             </div>

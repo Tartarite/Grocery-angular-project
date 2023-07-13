@@ -4,6 +4,7 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
+        <th scope="col">Description</th>
         <th scope="col">Category</th>
         <th scope="col">Quantity</th>
         <th scope="col">Price</th>
@@ -14,10 +15,11 @@
       <tr *ngFor="let prod of s">
         <th scope="row">{{prod.pid}}</th>
         <td>{{prod.pname}}</td>
+        <td>{{prod.dscp}}</td>
         <td>{{prod.cat}}</td>
         <td>{{prod.qty}}</td>
         <td>{{prod.price}}</td>
-        <td>{{prod.img}}</td>
+        <td><img src={{prod.img}} alt=""></td>
       </tr>
     </tbody>
   </table>

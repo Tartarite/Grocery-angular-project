@@ -42,14 +42,14 @@
                                                             <td>{{obj.pname}}</td>
                                                             <td>{{obj.cat}}</td>
                                                             <td>{{obj.qty}}</td>
-                                                            <td>{{obj.img}}</td>
+                                                            <td><img src={{obj.img}} alt=""></td>
                                                             <td>{{obj.price}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
-                                        <div id="invalidcpass"></div>
+                                        <div id="invalidproduct"></div>
                                     </div>
                                 </form>
                                 <form #log="ngForm" (ngSubmit)="updateProduct(log)">
@@ -116,10 +116,9 @@
 
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                                            type="submit" [disabled]="log.invalid">Insert</button><br>
+                                            type="submit" [disabled]="log.invalid">Update</button><br>
                                         <!--  <a class="text-muted" href="#!">Forgot password?</a> -->
                                         <div id="result2"></div>
-                                        <div id="invalidcpass"></div>
                                     </div>
 
                                 </form>

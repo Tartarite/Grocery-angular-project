@@ -8,7 +8,7 @@ import { GroceryServiceService } from '../grocery-service.service';
 })
 export class AdminUpdateProductsComponent {
   constructor(private serv:GroceryServiceService){}
-  obj:any={pid:Number, dscp:String, pname:String, qty:Number, cat:String,img:String,price:Number}
+  obj:any={pid:Number, dscp:String, pname:String, qty:Number, cat:String,img:String,price:Number,units:Number}
   id:number
   visible:boolean = false
   x:number
@@ -16,9 +16,16 @@ export class AdminUpdateProductsComponent {
     console.log("testing update")
     console.log(prod.value)
     
-    this.visible=true
+    
     this.serv.getProductByID(parseInt(prod.value.pid,10)).subscribe(
       (resp:any) => {
+         if(resp==null){
+          document.getElementById("invalidproduct")!.innerHTML="Product undefined";
+          return
+        }
+        else{
+          document.getElementById("invalidproduct")!.innerHTML="";
+        this.visible=true
         console.log("resp")
         console.log(resp)
         this.obj.pid=resp.pid
@@ -28,6 +35,8 @@ export class AdminUpdateProductsComponent {
         this.obj.cat=resp.cat
         this.obj.img=resp.img
         this.obj.price=resp.price
+        this.obj.units=resp.units
+        }
       }
     )
     console.log("In get product")
@@ -54,6 +63,7 @@ export class AdminUpdateProductsComponent {
     document.getElementById("result2")!.innerHTML="Product updated";
     
     setTimeout(() => {
+      
       log.reset()
       document.getElementById("result2")!.innerHTML="";
     }, 3000);

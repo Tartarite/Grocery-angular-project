@@ -23,7 +23,7 @@
                                                 required minlength="3" name="firstName" #firstName="ngModel" [(ngModel)]="fname" />
 
 
-                                            <div id="invalid1" *ngIf="firstName.touched">
+                                            <div class="errMsg" *ngIf="firstName.touched">
                                                 <p style="display: inline" *ngIf="firstName.errors?.['required']">First
                                                     Name
                                                     is required</p>
@@ -40,7 +40,7 @@
 
 
 
-                                            <div id="invalid1" *ngIf="lastName.touched">
+                                            <div class="errMsg" *ngIf="lastName.touched">
                                                 <p style="display: inline" *ngIf="lastName.errors?.['required']">Last
                                                     Name
                                                     is required</p>
@@ -59,7 +59,7 @@
                                                 #email="ngModel" [(ngModel)] = "eml" />
 
 
-                                            <div id="invalidemail" *ngIf="email.touched">
+                                            <div class="errMsg" id="invalidemail" *ngIf="email.touched">
                                                 <p style="display: inline" *ngIf="email.errors?.['required']">Email is
                                                     required</p>
                                                 <p style="display: inline" *ngIf="email.errors?.['pattern']">Enter a
@@ -75,7 +75,7 @@
                                                 #phoneNumber="ngModel" ngModel [(ngModel)]="pno"/>
 
 
-                                            <div id="invalid1" *ngIf="phoneNumber.touched">
+                                            <div class="errMsg" id="invalid1" *ngIf="phoneNumber.touched">
                                                 <p style="display: inline" *ngIf="phoneNumber.errors?.['required']">
                                                     Phone
                                                     number is required</p>
@@ -94,7 +94,7 @@
                                                 name="epassword" #epassword="ngModel" ngModel />
 
 
-                                            <div id="invalid1" *ngIf="epassword.touched">
+                                            <div class="errMsg" id="invalid1" *ngIf="epassword.touched">
                                                 <p style="display: inline" *ngIf="epassword.errors?.['required']">
                                                     Enter address</p>
                                             </div>
@@ -118,7 +118,7 @@
                                                 required minlength="3" name="cName" #cName="ngModel" [(ngModel)]="test" />
 
 
-                                            <div id="invalid1" *ngIf="cName.touched">
+                                            <div class="errMsg" id="invalid1" *ngIf="cName.touched">
                                                 <p style="display: inline" *ngIf="cName.errors?.['required']">
                                                     Name
                                                     is required</p>
@@ -128,14 +128,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-outline mb-4 col-lg-6">
+                                        <div  class="form-outline mb-4 col-lg-6">
                                             <label class="form-label" for="cno">Card Number</label>
                                             <input type="text" id="cno" class="form-control form-control-lg"
                                                 name="cno" required minlength="16" maxlength="16"  #cno="ngModel" ngModel />
                                             
 
 
-                                            <div id="invalid1" *ngIf="cno.touched">
+                                            <div class="errMsg" id="invalid1" *ngIf="cno.touched">
                                                 <p style="display: inline" *ngIf="cno.errors?.['required']">Card Number Required</p>
                                                 <p style="display: inline" *ngIf="cno.errors?.['minlength']">
                                                     16 digits required<br></p>
@@ -153,7 +153,7 @@
                                                 required min="2023-07" name="exp" #exp="ngModel" ngModel />
 
 
-                                            <div id="invalid1" *ngIf="exp.touched">
+                                            <div class="errMsg" id="invalid1" *ngIf="exp.touched">
                                                 <p style="display: inline" *ngIf="exp.errors?.['required']">Expiration date required</p>
                                                 
                                             </div>
@@ -166,7 +166,7 @@
 
 
 
-                                            <div id="invalid1" *ngIf="cvv.touched">
+                                            <div class="errMsg" id="invalid1" *ngIf="cvv.touched">
                                                 <p style="display: inline" *ngIf="cvv.errors?.['required']">CVV required</p>
                                                 <p style="display: inline" *ngIf="cvv.errors?.['minlength']">
                                                     3 digits required <br></p>
@@ -180,7 +180,6 @@
                                             type="submit" [disabled]="log.invalid" (click)="checkout()">Checkout</button><br>
                                         <!--  <a class="text-muted" href="#!">Forgot password?</a> -->
                                         <div id="result"></div>
-                                        <div id="invalidcpass"></div>
                                     </div>
 
                                 </form>

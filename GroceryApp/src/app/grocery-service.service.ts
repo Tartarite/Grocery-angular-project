@@ -80,6 +80,9 @@ export class GroceryServiceService {
     getAllProducts(){
       return this.http.get("http://localhost:8080/products")
     }
+    getAllProductsAsList(){
+      return this.http.get("http://localhost:8080/products/list")
+    }
     getAllProductsByTime(){
       return this.http.get("http://localhost:8080/products/new")
     }

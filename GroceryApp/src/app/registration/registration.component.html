@@ -21,7 +21,7 @@
                                                 required minlength="3" pattern="^[a-zA-Z ]*$" name="firstName" #firstName="ngModel" ngModel />
 
 
-                                            <div id="invalid1" *ngIf="firstName.touched">
+                                            <div class="errMsg"id="invalid1" *ngIf="firstName.touched">
                                                 <p style="display: inline" *ngIf="firstName.errors?.['required']">First
                                                     Name
                                                     is required</p>
@@ -40,7 +40,7 @@
 
 
 
-                                            <div id="invalid1" *ngIf="lastName.touched">
+                                            <div class="errMsg" id="invalid1" *ngIf="lastName.touched">
                                                 <p style="display: inline" *ngIf="lastName.errors?.['required']">Last
                                                     Name
                                                     is required</p>
@@ -61,7 +61,7 @@
                                                 #email="ngModel" ngModel />
 
 
-                                            <div id="invalidemail" *ngIf="email.touched">
+                                            <div class="errMsg" id="invalidemail" *ngIf="email.touched">
                                                 <p style="display: inline" *ngIf="email.errors?.['required']">Email is
                                                     required</p>
                                                 <p style="display: inline" *ngIf="email.errors?.['pattern']">Enter a
@@ -77,7 +77,7 @@
                                                 #phoneNumber="ngModel" ngModel />
 
 
-                                            <div id="invalid1" *ngIf="phoneNumber.touched">
+                                            <div class="errMsg" id="invalid1" *ngIf="phoneNumber.touched">
                                                 <p style="display: inline" *ngIf="phoneNumber.errors?.['required']">
                                                     Phone
                                                     number is required</p>
@@ -96,7 +96,7 @@
                                                 name="epassword" #epassword="ngModel" ngModel />
 
 
-                                            <div id="invalid1" *ngIf="epassword.touched">
+                                            <div class="errMsg" id="invalid1" *ngIf="epassword.touched">
                                                 <p style="display: inline" *ngIf="epassword.errors?.['required']">
                                                     Password
                                                     is required</p>
@@ -112,14 +112,14 @@
                                                 name="cpassword" #cpassword="ngModel" ngModel />
 
 
-                                            <div id="invalid1" *ngIf="cpassword.touched">
+                                            <div class="errMsg" id="invalid1" *ngIf="cpassword.touched">
                                                 <p style="display: inline" *ngIf="cpassword.errors?.['required']">
                                                     Password
                                                     is required</p>
                                                 <p style="display: inline" *ngIf="cpassword.errors?.['pattern']">Enter a
                                                     valid password</p>
                                             </div>
-                                            <div id="invalidcpass"></div>
+                                            <div class="errMsg" id="invalidcpass"></div>
 
                                         </div>
                                     </div>
@@ -129,7 +129,6 @@
                                             type="submit" [disabled]="log.invalid">Register</button><br>
                                         <!--  <a class="text-muted" href="#!">Forgot password?</a> -->
                                         <div id="result"></div>
-                                        <div id="invalidcpass"></div>
                                     </div>
 
                                 </form>

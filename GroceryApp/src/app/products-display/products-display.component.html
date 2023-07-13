@@ -9,10 +9,10 @@
 
 
 
-<div class="container px-4 px-lg-5 mt-5">
+<div class="container px-4 px-lg-5 mt-5" >
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
         <div class="col mb-5 btn btn-sm" *ngFor="let p of allproducts | filter:searchText   ">
-            <div class="card h-100" data-toggle="collapse">
+            <div class="card h-100" data-toggle="collapse" >
 
                 <img class="card-img-top" src={{p.img}} alt="..." (click)="testExpand(p)" />
 
@@ -31,7 +31,7 @@
                     <div class="text-center" [attr.id]="'showAddCart' + p.pid"><a
                             class="btn btn-outline-success mt-auto" (click)="changeVis(p)">Add To Cart</a></div>
                     <div class="text-center test" [attr.id]="'hideAddCart' + p.pid"><a
-                            class="btn btn-outline-success mt-auto"><a class="btn"
+                            class="btn btn-outline-success mt-auto"><a class="btn" 
                                 (click)="removeProduct(p)">-</a>&nbsp;&nbsp;&nbsp;&nbsp;{{p.cart_qty}}&nbsp;&nbsp;&nbsp;&nbsp;<a
                                 class="btn" [attr.id]="'add' + p.pid" (click)="addProduct(p)">+</a></a></div>
                 </div>

@@ -18,24 +18,38 @@
                                             <label class="form-label" for="pid">Product ID</label>
                                             <input type="text" id="pid" class="form-control form-control-lg" required
                                                 name="pid" #pid="ngModel" ngModel />
+                                            <div class="errMsg" id="invalidpid" *ngIf="pid.touched">
+                                                <p style="display: inline" *ngIf="pid.errors?.['required']">Required</p>
+
+                                            </div>
                                         </div>
+
 
                                         <div class="form-outline mb-4 col-lg-6">
                                             <label class="form-label" for="pname">Name</label>
                                             <input type="text" id="pname" class="form-control form-control-lg"
                                                 name="pname" required minlength="3" #pname="ngModel" ngModel />
+                                            <div class="errMsg" id="invalidname" *ngIf="pname.touched">
+                                                <p style="display: inline" *ngIf="pname.errors?.['required']">Required
+                                                </p>
+                                                <p style="display: inline" *ngIf="pname.errors?.['minlength']">Min 3
+                                                    chars</p>
+
+                                            </div>
                                         </div>
+
                                     </div>
                                     <div class="row">
                                         <div class="form-outline mb-4 col-lg-6">
                                             <label class="form-label" for="cat">Category</label>
-                                            <input type="test" id="cat" class="form-control form-control-lg" required
-                                                name="cat" #cat="ngModel" ngModel />
+                                            <input type="text" id="cat" class="form-control form-control-lg" required
+                                                name="cat" #cat="ngModel" minlength="3" ngModel />
 
 
-                                            <div id="invalidemail" *ngIf="cat.touched">
+                                            <div class="errMsg" id="invalidcat" *ngIf="cat.touched">
                                                 <p style="display: inline" *ngIf="cat.errors?.['required']">Required</p>
-
+                                                <p style="display: inline" *ngIf="cat.errors?.['minlength']">Min 3 chars
+                                                </p>
                                             </div>
 
                                         </div>
@@ -45,10 +59,8 @@
                                                 name="qty" #qty="ngModel" ngModel />
 
 
-                                            <div id="invalid1" *ngIf="qty.touched">
-                                                <p style="display: inline" *ngIf="qty.errors?.['required']">
-                                                    Phone
-                                                    number is required</p>
+                                            <div class="errMsg" id="invalidqty" *ngIf="qty.touched">
+                                                <p style="display: inline" *ngIf="qty.errors?.['required']">Required</p>
                                             </div>
 
                                         </div>
@@ -60,7 +72,7 @@
                                                 name="price" #price="ngModel" ngModel />
 
 
-                                            <div id="invalidprice" *ngIf="price.touched">
+                                            <div class="errMsg" id="invalidprice" *ngIf="price.touched">
                                                 <p style="display: inline" *ngIf="price.errors?.['required']">Required
                                                 </p>
 
@@ -74,12 +86,11 @@
                                                 #image="ngModel" ngModel />
 
 
-                                            <div id="invalid1" *ngIf="image.touched">
+                                            <div class="errMsg" id="invalidimg" *ngIf="image.touched">
                                                 <p style="display: inline" *ngIf="image.errors?.['required']">
                                                     Required</p>
 
                                             </div>
-                                            <div id="invalidcpass"></div>
 
                                         </div>
                                     </div>
@@ -87,12 +98,14 @@
                                         <div class="form-outline mb-4 col-lg-12">
                                             <label class="form-label" for="dscp">Description</label>
                                             <input type="text" id="dscp" class="form-control form-control-lg" required
-                                                name="dscp" #dscp="ngModel" ngModel />
+                                                name="dscp" #dscp="ngModel" minlength="3" ngModel />
 
 
-                                            <div id="invalid1" *ngIf="dscp.touched">
+                                            <div class="errMsg" id="invaliddscp" *ngIf="dscp.touched">
                                                 <p style="display: inline" *ngIf="dscp.errors?.['required']">Required
                                                 </p>
+                                                <p style="display: inline" *ngIf="dscp.errors?.['minlength']">Min 3
+                                                    chars</p>
 
                                             </div>
 
@@ -103,7 +116,7 @@
                                         <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
                                             type="submit" [disabled]="log.invalid">Insert</button><br>
                                         <div id="result"></div>
-                                        <div id="invalidcpass"></div>
+                                        <div class="errMsg" id="invalidinsert"></div>
                                     </div>
 
                                 </form>
